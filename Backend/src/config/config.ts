@@ -25,7 +25,7 @@ export const config = {
   ACCESS_TOKEN_EXP: ms(process.env.ACCESS_TOKEN_EXP as ms.StringValue),
   REFRESH_TOKEN_EXP: ms(process.env.REFRESH_TOKEN_EXP as ms.StringValue),
   CLIENT_URL: process.env.CLIENT_URL!,
-  ADMIN_EMAIL: process.env.ADMIN_Email!,
+  ADMIN_EMAIL: process.env.ADMIN_EMAIL!,
   Cloudinary_Name: process.env.Cloudinary_Name,
   Cloudinary_API_Key: process.env.Cloudinary_API_Key,
   Cloudinary_API_Secret: process.env.Cloudinary_API_Secret,
