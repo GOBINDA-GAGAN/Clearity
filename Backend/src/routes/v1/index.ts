@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 const router = Router();
 
-router.get("/status", (req: Request, res: Response) => {
+router.get("/", (req: Request, res: Response) => {
   const now = new Date();
 
   res.status(200).json({
