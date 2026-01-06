@@ -1,23 +1,15 @@
 import { uploadTocloudnary } from "@/lib/uploadToCloudnary";
 import { Blog } from "@/models/blog";
-
-
 import type { Request, Response, NextFunction } from "express";
 
-import type { UploadApiErrorResponse } from "cloudinary";
 
 
 const Max_File_Size = 2 * 1024 * 1024  //2Mb
 
-
-
 const uploadBlogBanner = (method: 'post' | 'put') => {
-    
-    
-    
+     
     return async (req: Request, res: Response, next: NextFunction) => {
        
-
         if (method === 'put' && !req.file) {
             next();
             return;
@@ -52,7 +44,6 @@ const uploadBlogBanner = (method: 'post' | 'put') => {
 
                 oldPublicId = blog.banner?.publicId?.replace("blog-api/", "") ?? "";
             }
-
             const data = await uploadTocloudnary(req.file.buffer, oldPublicId);
             if (!data) {
                 res.status(500).json({
@@ -67,8 +58,6 @@ const uploadBlogBanner = (method: 'post' | 'put') => {
                 width: data.width,
                 height: data.height
             };
-     
-
             next();
 
         } catch (err) {

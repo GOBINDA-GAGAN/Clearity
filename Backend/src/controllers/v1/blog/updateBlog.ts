@@ -18,13 +18,6 @@ export const updateBlog = async (req: Request, res: Response): Promise<void> => 
 
         const { title, content, banner, status } = req.body as blogData;
 
-        if (!title || !content || !banner) {
-            res.status(400).json({
-                message: "Title, content and banner are required"
-            });
-            return;
-        }
-
         const userId = req.userId;
         const blogId = req.params.blogId;
         const user = await User.findById(userId).select('role').lean().exec();
