@@ -8,9 +8,6 @@ import express, { Request, Response } from "express";
 import compression from "compression";
 import limiter from "@/lib/expressRateLimit";
 import v1Routes from "@/routes/v1";
-import authRoute from "@/routes/v1/auth"
-import userRoute from "@/routes/v1/user"
-import blogRoute from '@/routes/v1/blog'
 import { connectDb, disconnectDb } from "@/lib/connectDb";
 
 const app = express();
@@ -25,15 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(limiter);
 
 
-// ---------------------- ROUTES ----------------------
-
-app.use("/api/v1/auth", authRoute)
-app.use("/api/v1/users", userRoute)
-app.use("/api/v1/blog", blogRoute)
-
-
 // ---------------------- Root ROUTES ----------------------
 app.use("/api/v1", v1Routes);
+
+
+
 
 // ---------------------- SERVER START ----------------------
 let server: any;

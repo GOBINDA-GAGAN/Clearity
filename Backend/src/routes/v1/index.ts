@@ -1,4 +1,10 @@
 import { Request, Response, Router } from "express";
+
+import authRoute from "@/routes/v1/auth"
+import userRoute from "@/routes/v1/user"
+import blogRoute from '@/routes/v1/blog'
+import likeRoutes from "@/routes/v1/like"
+
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
@@ -16,6 +22,10 @@ router.get("/", (req: Request, res: Response) => {
   });
 });
 
+router.use("/auth", authRoute)
+router.use("/users", userRoute)
+router.use("/blogs", blogRoute)
+router.use('/likes',likeRoutes)
 
 
 export default router;

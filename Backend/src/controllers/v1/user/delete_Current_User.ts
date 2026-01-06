@@ -1,11 +1,18 @@
 import { Request, Response } from "express";
 import { User } from "@/models/user"
+import { v2 as cloudinary } from "cloudinary"
+import { Blog } from "@/models/blog";
 
 
 
 export const deleteCurrentUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = req.userId;
+    const blogs = await Blog.find({ author: userId }).select('banner.publicId').lean().exec();
+
+    const publicIds = blogs.map(({ banner }) => banner.publicId);
+    await cloudinary.api.delete_resources(publicIds);
+    await Blog.deleteMany({ author: userId });
 
     if (!userId) {
       res.status(404).json({

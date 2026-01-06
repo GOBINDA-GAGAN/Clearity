@@ -1,5 +1,4 @@
-import { Request, Response, Router } from "express";
-import { param, body, query } from "express-validator";
+import {  Router } from "express";
 
 
 import { authenticate } from "@/middleware/authenticate";
