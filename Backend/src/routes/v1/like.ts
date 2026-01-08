@@ -2,7 +2,8 @@ import {  Router } from "express";
 import { authenticate } from "@/middleware/authenticate"
 import { authorize } from "@/middleware/authorize"
 import { likeBlog } from "@/controllers/v1/like/like_blog";
-import { unlikeBlog } from "@/controllers/v1/like/unlike_Blog";
+import { unlikeBlog } from "@/controllers/v1/like/unlike_blog";
+
 
 
 
