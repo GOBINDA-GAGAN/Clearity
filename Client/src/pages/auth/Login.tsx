@@ -1,8 +1,9 @@
-import React from 'react'
+import { LoginFrom } from '@/components/ui/LoginFrom'
+
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div><LoginFrom /></div>
   )
 }
 
