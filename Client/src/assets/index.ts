@@ -1,5 +1,5 @@
 // import images
-import LoginImage from './login.jpg';
+import LoginImage from '@/assets/login.jpg';
 import SignupImage from './signup.png';
 import LightLogo from './lightLogo.png';
 import DarkLogo from './darkLogo.png';
