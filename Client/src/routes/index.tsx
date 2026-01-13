@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router"
 import Login from "@/pages/auth/Login"
 import { Button } from "@/components/ui/button"
+import SignupPage from "@/pages/auth/SignupPage"
 
 const router = createBrowserRouter([
     {
@@ -9,6 +10,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/signup",
+        Component:SignupPage
     },
     {
         path: "/refresh-token",

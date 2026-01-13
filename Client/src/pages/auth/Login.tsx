@@ -1,9 +1,13 @@
-import { LoginFrom } from '@/components/ui/LoginFrom'
+import LoginFrom from "@/components/LoginForm"
+
+
+
 
 
 const Login = () => {
   return (
     <div><LoginFrom /></div>
+
   )
 }
 
